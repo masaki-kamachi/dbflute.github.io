@@ -24,7 +24,7 @@
 
 <!ELEMENT component (
   #PCDATA | description | arg | property | meta |
-            initMethod | destroyMethod | aspect | interType)*>
+            postConstruct | preDestroy | aspect | interType)*>
 <!ATTLIST component instance (
   singleton | prototype | outer | request | session | application) "singleton">
 <!ATTLIST component class CDATA #IMPLIED>
@@ -51,15 +51,15 @@
 <!ELEMENT interType (
 		#PCDATA | description | component)*>
 
-<!ELEMENT initMethod (
+<!ELEMENT postConstruct (
         #PCDATA | description | arg
 )*>
-<!ATTLIST initMethod name CDATA #IMPLIED>
+<!ATTLIST postConstruct name CDATA #IMPLIED>
 
-<!ELEMENT destroyMethod (
+<!ELEMENT preDestroy (
         #PCDATA | description | arg
 )*>
-<!ATTLIST destroyMethod name CDATA #IMPLIED>
+<!ATTLIST preDestroy name CDATA #IMPLIED>
 
 <!ELEMENT meta (
         #PCDATA | description | component | meta
